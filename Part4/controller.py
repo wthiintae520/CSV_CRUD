@@ -14,17 +14,17 @@ class Controller:
     # reload the dataset
     def reload(self):
         Controller.print_name(self)
+        data_list.clear()
         try:
-            data_list.clear()
-            open("C:/Desk/CP/Level 4/CST8333 Programming Language Research Project/git/CSV_CRUD/Part4/NAFO-4TVN-Atlantic-Cod-otoliths.csv", "r")
-            for i in range(101):
-                line = csvfile.readline()
-                elements = line.split(",")
-                data = otolith.Otolith(elements[0][1:-1], elements[1][1:-1], elements[2][1:-1], elements[3][1:-1], elements[4], elements[5], elements[6][0:3])
-                data_list.append(data)
-            print("NAFO-4TVN-Atlantic-Cod-otoliths.csv file reloaded successfully!")
+            csvfile = open("C:/Desk/CP/Level 4/CST8333 Programming Language Research Project/git/CSV_CRUD/Part4/NAFO-4TVN-Atlantic-Cod-otoliths.csv", "r")
         except Exception:
             print("NAFO-4TVN-Atlantic-Cod-otoliths.csv file not found")
+        for i in range(601):
+            line = csvfile.readline()
+            elements = line.split(",")
+            data = otolith.Otolith(elements[0][1:-1], elements[1][1:-1], elements[2][1:-1], elements[3][1:-1], elements[4], elements[5], elements[6][0:3])
+            data_list.append(data)
+        print("NAFO-4TVN-Atlantic-Cod-otoliths.csv file reloaded successfully!")
 
     # export the current data list into a new file
     def export(self):
