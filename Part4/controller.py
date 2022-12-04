@@ -16,7 +16,7 @@ class Controller:
         Controller.print_name(self)
         try:
             data_list.clear()
-            open("NAFO-4TVN-Atlantic-Cod-otoliths.csv", "r")
+            open("C:/Desk/CP/Level 4/CST8333 Programming Language Research Project/git/CSV_CRUD/Part4/NAFO-4TVN-Atlantic-Cod-otoliths.csv", "r")
             for i in range(101):
                 line = csvfile.readline()
                 elements = line.split(",")
